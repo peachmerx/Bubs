@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Bubs</title>
+</head>
+<body>
+    <h1>Bubs</h1>
+    <nav class="navbar">
+        <ul>
+            <li><a href="/toys">TOYS</a></li>
+            
+            <li><a href="/clothes">CLOTHES</a></li>
+        
+            <li><a href="/books">BOOKS</a></li>
+            
+            <li><a href="/learn">LEARN</a></li>
+            
+            <button><a href ="/login">LOG IN</a></button>
+
+            <button><a href ="/join">JOIN</a></button>
+        </ul>
+    </nav>
+    <ol>
+        {% for id, name, image, price in product_items %}
+        <li>
+            <br>
+            <img src = "{{image}}">
+            <br>
+            {{name}}
+            <br>
+            {{price}}
+            <br>
+        </li>
+        {% endfor %}
+    </ol>  
+</body>
+</html>
