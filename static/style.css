@@ -1,8 +1,8 @@
 body {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    color: rgb(253, 160, 61);
-    background-color: rgb(255, 255, 255);
+    color: #d16b9b;
+    background-color: #d16b9b;
 }
 nav {
     width: 100%;
@@ -13,26 +13,30 @@ nav > ul > li {
 }
 a{
     text-decoration: none;
-    color: rgb(255, 111, 0);
+    color: #f8e9c9;
     border-radius: 5px;
 }
 h1 {
     font-size: 50px;
+    background-color: #f8e9c9;
 }
 li {
     font-size: 15px;
     list-style-type: none;
+    color: #f8e9c9;
 }
 img {
     border-radius: 30px;
-    width: 300px;
+    width: 250px;
     align-content: center;
+    /* border-color: #915cab; */
+    border-style: solid;
 }
 button > a {
-    color: rgb(170, 0, 255);
+    color: #f8e9c9;
 }
 button {
-    background-color: rgb(255, 255, 255);
+    background-color: #d16b9b;
     border-radius: 5px;
     border-style: solid;
 }
