@@ -1,3 +1,7 @@
+import os
+
+DB_URL = os.environ.get('DATABASE_URL', 'dbname=bubs')
+
 import psycopg2
 from flask import Flask, render_template, request, redirect
 from models.db import sql_select
@@ -61,7 +65,7 @@ def login():
 def login_action():
 
     user_email = request.form.get('email')
-    conn = psycopg2.connect('dbname = bubs')
+    conn = psycopg2.connect(DB_URL)
     cur = conn.cursor()
     cur.execute('SELECT id, email FROM users WHERE email = %s', [user_email])
 
@@ -93,7 +97,7 @@ def create_action():
     price = int(request.form.get('price'))
     image = request.form.get('image_url')
 
-    conn = psycopg2.connect("dbname=toys")
+    conn = psycopg2.connect(DB_URL)
     cur = conn.cursor()
     cur.execute("INSERT INTO toys (name, price, image) VALUES (%s, %s)",
                 [name, price, image])
@@ -105,7 +109,7 @@ def create_action():
 @app.route('/edit_item/<id>')
 def edit_item(id):
 
-    conn = psycopg2.connect('dbname=toys')
+    conn = psycopg2.connect(DB_URL)
     cur = conn.cursor()
 
     cur.execute('SELECT id, name, price,image_url FROM toys WHERE id=%s', [id])
@@ -124,7 +128,7 @@ def edit_action():
     price = request.form.get('price')
     image_url = request.form.get('image_url')
 
-    conn = psycopg2.connect('dbname=toys')
+    conn = psycopg2.connect(DB_URL)
     cur = conn.cursor()
     print(name, price, image_url,id)
     cur.execute('UPDATE toys SET name=%s, price=%s, image_url=%s WHERE id=%s', [name, price, image_url, id])
@@ -135,13 +139,13 @@ def edit_action():
 
     return redirect('/toys')
 
-@app.route('/delete/<toys_id>', methods=['POST', 'GET'])
-def delete(toys_id):
+@app.route('/delete/<id>', methods=['POST', 'GET'])
+def delete(id):
 
-    conn = psycopg2.connect('dbname=toys')
+    conn = psycopg2.connect(DB_URL)
     cur = conn.cursor()
 
-    cur.execute('Delete from toys where id = %s', [toys_id])
+    cur.execute('Delete from toys where id = %s', [id])
     conn.commit()
 
     cur.close()
@@ -149,4 +153,6 @@ def delete(toys_id):
 
     return redirect('/toys')
 
-app.run(debug=True)
+
+if __name__ == '__main__':
+    app.run(debug=True)
