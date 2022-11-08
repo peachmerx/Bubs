@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Bubs</title>
+</head>
+<body>
+    <h1>BUBS</h1>
+        <div class="dropdown" style="float:left;">
+            <button class="dropbtn">Menu</button>
+            <div class="dropdown-content">
+                <li><a href="/toys">TOYS</a></li>
+            
+                <li><a href="/clothes">CLOTHES</a></li>
+            
+                <li><a href="/books">BOOKS</a></li>
+                
+                <li><a href="/learn">LEARN</a></li>
+                
+                <button><a href ="/login">LOG IN</a></button>
+    
+                <button><a href ="/join">JOIN</a></button>
+            </div>
+        </div>
+    <br>
+    <br>
+    <br>
+    <ol>
+        {% for id, name, image, price in product_items %}
+        <li>
+            <br>
+            <br>
+            <img src = "{{image}}">
+            <br>
+            <br>
+            {{name}}
+            <br>
+            <br>
+            {{price}}
+            <br>
+            <br>
+            [ <a href="/delete">Delete Item</a> / <a href="/edit">Edit Item</a> / <a href="/add">Add Item</a> ]
+            <br>
+        </li>
+        {% endfor %}
+    </ol>  
+</body>
+</html>

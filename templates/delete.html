@@ -1,0 +1,6 @@
+<h1>Delete Food Item {{ item_id }}: {{ item.name }}</h1>
+    <p>Are you sure?</p>
+    <form action="/delete_action" method="POST">
+      <input type="hidden" name="item_id" value="{{ item_id }}">
+      <button>Yes</button>
+    </form>
