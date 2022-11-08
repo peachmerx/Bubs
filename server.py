@@ -135,23 +135,18 @@ def edit_action():
 
     return redirect('/toys')
 
-@app.route('/delete/<item_id>')
-def delete(item_id):
-    item = get_food(item_id)
-    return render_template('delete.html', item_id=item_id, item=item)
+@app.route('/delete/<toys_id>', methods=['POST', 'GET'])
+def delete(toys_id):
 
-
-@app.route('/delete_action', methods=["POST"])
-def delete_action():
-    # First, get user input
-    item_id = request.form.get('item_id')
-
-    conn = psycopg2.connect("dbname=food_truck")
+    conn = psycopg2.connect('dbname=toys')
     cur = conn.cursor()
-    cur.execute("DELETE FROM food WHERE id = %s", [item_id])
+
+    cur.execute('Delete from toys where id = %s', [toys_id])
     conn.commit()
+
+    cur.close()
     conn.close()
 
-    return redirect('/')
+    return redirect('/toys')
 
 app.run(debug=True)

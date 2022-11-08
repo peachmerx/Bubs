@@ -1,6 +1,19 @@
-<h1>Delete Food Item {{ item_id }}: {{ item.name }}</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Food Truck</title>
+</head>
+<body>
+    <h1>{{id}}</h1>
     <p>Are you sure?</p>
-    <form action="/delete_action" method="POST">
-      <input type="hidden" name="item_id" value="{{ item_id }}">
-      <button>Yes</button>
+    <form action="/delete" method="post">
+        <input type="hidden" name = "id" value = "{{id}}">
+        <button>Yes</button>
     </form>
+
+</body>
+</html>

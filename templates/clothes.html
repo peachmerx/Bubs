@@ -12,17 +12,17 @@
         <div class="dropdown" style="float:left;">
             <button class="dropbtn">Menu</button>
             <div class="dropdown-content">
-                <li><a href="/toys">TOYS</a></li>
+                <a href="/toys">TOYS</a>
             
-                <li><a href="/clothes">CLOTHES</a></li>
+                <a href="/clothes">CLOTHES</a>
             
-                <li><a href="/books">BOOKS</a></li>
+                <a href="/books">BOOKS</a>
                 
-                <li><a href="/learn">LEARN</a></li>
+                <a href="/learn">LEARN</a>
                 
-                <button><a href ="/login">LOG IN</a></button>
+                <a href ="/login">LOG IN</a>
     
-                <button><a href ="/join">JOIN</a></button>
+                <a href ="/join">JOIN</a>
             </div>
         </div>
     <br>
@@ -33,7 +33,7 @@
         <li>
             <br>
             <br>
-            <img src = "{{image}}">
+            <img src = "{{image}}" class="imageproduct">
             <br>
             <br>
             {{name}}
@@ -42,7 +42,7 @@
             {{price}}
             <br>
             <br>
-            [ <a href="/delete">Delete Item</a> / <a href="/edit">Edit Item</a> / <a href="/add">Add Item</a> ]
+            [ <a href="/edit">Edit Item</a> / <a href="/delete">Delete Item</a> / <a href="/add">Add Item</a> ]
             <br>
         </li>
         {% endfor %}
