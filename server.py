@@ -68,7 +68,7 @@ def login():
 def login_action():
 
     user_email = request.form.get('email')
-    password = request.form.get['password']
+    password = request.form.get('password')
     
     conn = psycopg2.connect(DB_URL)
     cur = conn.cursor()
@@ -81,7 +81,7 @@ def login_action():
     print(user_record)
 
     if user_record:
-        if bcrypt.checkpw(password.encode('skadoosh12314'), user_record[2].encode('skadoosh12314')):
+        if bcrypt.checkpw(password.encode(), user_record[2].encode()):
             session['user_id'] = user_record[0]
             return redirect('/profile')
     else:
