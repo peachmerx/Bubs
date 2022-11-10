@@ -3,11 +3,13 @@ import os
 DB_URL = os.environ.get('DATABASE_URL', 'dbname=bubs')
 
 import psycopg2
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, session
 from models.db import sql_select
 import bcrypt
 
 app = Flask(__name__)
+
+app.secret_key = os.environ.get("SECRET_KEY")
 
 @app.route('/')
 def index():
@@ -83,7 +85,7 @@ def login_action():
     if user_record:
         if bcrypt.checkpw(password.encode(), user_record[2].encode()):
             session['user_id'] = user_record[0]
-            return redirect('/profile')
+            return redirect('/')
     else:
         return redirect('/login')
 
