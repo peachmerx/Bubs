@@ -90,7 +90,7 @@ def create():
     return render_template('add.html')
 
 
-@app.route('/add_action_toys', methods=["POST"])
+@app.route('/add_action', methods=["POST"])
 def create_action():
     # First, get user input
     name = request.form.get('name')
