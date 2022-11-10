@@ -13,13 +13,6 @@ INSERT INTO books (brand, name, image_url, price) VALUES ('Ingela P Arrhenius', 
 INSERT INTO books (brand, name, image_url, price) VALUES ('Sophie Beer', 'Love Makes A Family', 'https://cdn.shopify.com/s/files/1/0249/5715/7421/products/LoveMakesAFamily_Book_460x.jpg?v=1625640187', 1700);
 INSERT INTO books (brand, name, image_url, price) VALUES ('Eric Carle', 'The Very Hungry Caterpillar', 'https://cdn.shopify.com/s/files/1/0249/5715/7421/products/Theveryhungrycatipillar_play_460x.jpg?v=1625639609', 1500);
 
-INSERT INTO users (brand, name, email) VALUES ('Peach', 'peach@example.com');
-INSERT INTO users (brand, name, email) VALUES ('James', 'james@example.com');
-INSERT INTO users (brand, name, email) VALUES ('Ben', 'ben@example.com');
+INSERT INTO users (name, email, password_hash) VALUES ('Peach', 'peachmercader@gmail.com', '$2b$12$zPKRrhoIst0lWXzyMhAgFe.mXNCo7mRfGesg7EbDNpKAq7zsFmHY6');
 
-INSERT INTO blogs (post, user_id) VALUES ('Baby Food', 2);
-INSERT INTO blogs (post, user_id) VALUES ('Educational Toys for the Bubs', 2);
-INSERT INTO blogs (post, user_id) VALUES ('Summer Bubs', 3);
 INSERT INTO blogs (post, user_id) VALUES ('Parks in Richmond', 1);
-
-INSERT INTO blogs (post, user_id) VALUES ('Come back to me', 4);

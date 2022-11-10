@@ -5,6 +5,7 @@ DB_URL = os.environ.get('DATABASE_URL', 'dbname=bubs')
 import psycopg2
 from flask import Flask, render_template, request, redirect
 from models.db import sql_select
+import bcrypt
 
 app = Flask(__name__)
 
@@ -56,6 +57,8 @@ def books():
 
     return render_template('books.html', product_items=product_items)
 
+
+#LOGIN/LOGOUT
 @app.route('/login')
 def login():
     return render_template('login.html')
@@ -65,25 +68,24 @@ def login():
 def login_action():
 
     user_email = request.form.get('email')
+    password = request.form.get['password']
+    
     conn = psycopg2.connect(DB_URL)
     cur = conn.cursor()
-    cur.execute('SELECT id, email FROM users WHERE email = %s', [user_email])
-
+    cur.execute('SELECT id, email, password_hash FROM users WHERE email = %s', [user_email])
     user_record = cur.fetchone()
-    print(user_record)
 
     cur.close()
     conn.close()
 
+    print(user_record)
+
     if user_record:
-        user_id, sql_result_email = user_record
-        print(sql_result_email)
-        print("found the user")
-        print(user_id)
-        return redirect('/')
+        if bcrypt.checkpw(password.encode('skadoosh12314'), user_record[2].encode('skadoosh12314')):
+            session['user_id'] = user_record[0]
+            return redirect('/profile')
     else:
-        print("user not found")
-        return redirect('/')
+        return redirect('/login')
 
 @app.route('/add')
 def create():

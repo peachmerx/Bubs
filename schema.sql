@@ -4,7 +4,6 @@ CREATE TABLE toys (
     brand VARCHAR(50) NOT NULL,
     name VARCHAR(50) NOT NULL,
     price INTEGER NOT NULL,
-    description TEXT,
     image_url TEXT
 );
 
@@ -14,7 +13,6 @@ CREATE TABLE clothes (
     brand VARCHAR(50) NOT NULL,
     name VARCHAR(50) NOT NULL,
     price INTEGER NOT NULL,
-    description TEXT,
     image_url TEXT
 );
 
@@ -24,7 +22,6 @@ CREATE TABLE books (
     brand VARCHAR(50) NOT NULL,
     name VARCHAR(50) NOT NULL,
     price INTEGER NOT NULL,
-    description TEXT,
     image_url TEXT
 );
 
@@ -33,17 +30,6 @@ CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     name TEXT,
     email TEXT,
+    password_hash TEXT,
     verified BOOLEAN
 );
-
-CREATE TABLE blogs (
-    id SERIAL PRIMARY KEY,
-    post TEXT,
-    user_id INTEGER,
-
-    CONSTRAINT fk_customer
-        FOREIGN KEY (user_id)
-            REFERENCES users(id)
-);
-
-
