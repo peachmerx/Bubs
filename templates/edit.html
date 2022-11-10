@@ -10,7 +10,14 @@
 <body>
   <h1>BUBS</h1>
     <h3>Edit Item:</h3>
-    <form method="POST" action="/edit_action">
+    <form method="POST" action="/edit_action/{{id}}">
+    <div>
+        <label>
+        Item Brand:
+        <br>
+        <input type="text" name="brand" value="{{brand}}">
+        </label>
+    </div>
     <div>
         <label>
         Item Name:

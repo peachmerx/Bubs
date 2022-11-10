@@ -4,6 +4,8 @@ DB_URL = os.environ.get('DATABASE_URL', 'dbname=bubs')
 
 import psycopg2
 
+#selects All
+#return results
 def sql_select(db_query, params=[]):
     conn = psycopg2.connect(DB_URL)
     cur = conn.cursor()
@@ -15,3 +17,4 @@ def sql_select(db_query, params=[]):
     conn.close()
     
     return results
+
