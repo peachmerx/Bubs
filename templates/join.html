@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Bubs</title>
+</head>
+<body>
+    <div class="hero-container">
+        <h1 class="max-text-height">SIGN UP</h1>
+    </div>
+    
+    <div class="login-form">
+        <form class="login" method="POST" action="/sign_up_action">
+            <h1>Hello, <span class="bg-text-green"> Mummy</span>! Do you wanna join our community?</h1>
+            <br>
+            <br>
+            <p>What's your name?</p>
+            <br>
+            <input type="text" name="name" placeholder="Name" required>
+            <br>
+            <br>
+            <p>Your Email</p>
+            <br>
+            <input type="text" name="email" placeholder="Email" required>
+            <br>
+            <br>
+            <p>Create Password</p>
+            <br>
+            <input type="text" name="password" placeholder="Password" required>
+            <div class="submit">
+                <input id="submit-login" type="submit" value="SIGN UP">
+            </div>
+        </form>
+    </div>
+</body>

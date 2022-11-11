@@ -58,6 +58,48 @@ def login_action():
     else:
         return redirect('/login')
 
+@app.route('/logout')
+def logout():
+    response = redirect('/')
+    return response
+
+#ACCOUNT PROFILE
+@app.route('/account')
+def account():
+    results = sql_select('SELECT id, name, price, image_url FROM toys')
+
+    product_items = []
+    for row in results:
+        id, name, price, image_url = row
+        price = f'${price/100:.2f}'
+        product_items.append([id, name, price, image_url])
+
+    return render_template('account.html', product_items=product_items)
+
+#JOIN
+@app.route('/join')
+def join():
+    return render_template('join.html')
+
+@app.route('/join_action', methods=['POST'])
+def join_action():
+    # no session and password
+    name = request.form['name']
+    email = request.form['email']
+    password = request.form['password_hash']
+
+    password_hash = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
+
+    conn = psycopg2.connect(DB_URL)
+    cur = conn.cursor()
+    cur.execute('INSERT INTO users (name, email, password_hash) VALUES (%s, %s, %s)', [name, email, password_hash])
+
+    conn.commit()
+    cur.close()
+    conn.close()
+
+    return redirect('/')
+
 #ADD AN ITEM
 @app.route('/add')
 def create():
