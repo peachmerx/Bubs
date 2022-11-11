@@ -38,7 +38,7 @@
             {{price}}
             <br>
             <br>
-            [ <a href="/edit/{{id}}">Edit Item</a> / <a href="/delete">Delete Item</a> / <a href="/add">Add Item</a> ]
+            [ <a href="/edit/{{id}}">Edit Item</a> / <a href="{{url_for('delete', toys_id = id)}}">Delete Item</a> / <a href="/add">Add Item</a> ]
             <br>
         </li>
         {% endfor %}

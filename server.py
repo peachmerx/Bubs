@@ -9,6 +9,7 @@ import bcrypt
 
 app = Flask(__name__)
 
+# create this for the .env SECRET_KEY (so no one can see your password)
 app.secret_key = os.environ.get("SECRET_KEY")
 
 @app.route('/')
@@ -57,10 +58,10 @@ def login_action():
     else:
         return redirect('/login')
 
+#ADD AN ITEM
 @app.route('/add')
 def create():
     return render_template('add.html')
-
 
 @app.route('/add_action', methods=["POST"])
 def create_action():
@@ -78,6 +79,7 @@ def create_action():
 
     return redirect('/toys')
 
+#EDIT AN ITEM
 @app.route('/edit/<id>')
 def edit(id):
 
@@ -111,29 +113,15 @@ def edit_action():
 
     return redirect('/toys')
 
-@app.route('/delete/<item_id>')
-def delete(item_id):
+#DELETE AN ITEM
+#placed an id in toys.html href and delete.html id
+@app.route('/delete/<toys_id>', methods=['POST', 'GET'])
+def delete(toys_id):
 
     conn = psycopg2.connect(DB_URL)
     cur = conn.cursor()
 
-    cur.execute('SELECT id, name, price,image_url FROM toys WHERE id=%s', [item_id])
-    id, name, price, image_url = cur.fetchone()
-
-    cur.close()
-    conn.close()
-
-    return render_template('delete.html', item_id=item_id, id=id, name=name, price=price, image_url=image_url)
-
-@app.route('/delete_action', methods=['POST', 'GET'])
-def delete_action(item_id):
-
-    item_id = request.form.get('item_id')
-
-    conn = psycopg2.connect(DB_URL)
-    cur = conn.cursor()
-
-    cur.execute('Delete from toys where id = %s', [item_id])
+    cur.execute('Delete from toys where id = %s', [toys_id])
     conn.commit()
 
     cur.close()
@@ -141,6 +129,36 @@ def delete_action(item_id):
 
     return redirect('/toys')
 
+
+# @app.route('/delete/<item_id>')
+# def delete(item_id):
+
+#     conn = psycopg2.connect(DB_URL)
+#     cur = conn.cursor()
+
+#     cur.execute('SELECT id, name, price,image_url FROM toys WHERE id=%s', [item_id])
+#     id, name, price, image_url = cur.fetchone()
+
+#     cur.close()
+#     conn.close()
+
+#     return render_template('delete.html', item_id=item_id, id=id, name=name, price=price, image_url=image_url)
+
+# @app.route('/delete_action', methods=['POST', 'GET'])
+# def delete_action(item_id):
+
+#     item_id = request.form.get('item_id')
+
+#     conn = psycopg2.connect(DB_URL)
+#     cur = conn.cursor()
+
+#     cur.execute('Delete from toys where id = %s', [item_id])
+#     conn.commit()
+
+#     cur.close()
+#     conn.close()
+
+#     return redirect('/toys')
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -13,11 +13,12 @@
             <button class="dropbtn">Menu</button>
             <div class="dropdown-content">
                 <a href="/toys">TOYS</a>
-            
+
                 <a href="/learn">LEARN</a>
                 
-                <a href ="/logout">LOG OUT</a>
+                <a href ="/login">LOG IN</a>
     
+                <a href ="/join">JOIN</a>
             </div>
         </div>
     <br>
@@ -37,7 +38,7 @@
             {{price}}
             <br>
             <br>
-            [ <a href="/edit/{{id}}">Edit Item</a> / <a href="/delete">Delete Item</a> / <a href="/add">Add Item</a> ]
+            [ <a href="/edit/{{id}}">Edit Item</a> / <a href="{{url_for('delete', toys_id = id)}}">Delete Item</a> / <a href="/add">Add Item</a> ]
             <br>
         </li>
         {% endfor %}
