@@ -54,7 +54,7 @@ def login_action():
     if user_record:
         if bcrypt.checkpw(password.encode(), user_record[2].encode()):
             session['user_id'] = user_record[0]
-            return redirect('/profile')
+            return redirect('/account')
     else:
         return redirect('/login')
 
