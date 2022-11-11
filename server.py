@@ -28,19 +28,6 @@ def toys():
 
     return render_template('toys.html', product_items=product_items)
 
-@app.route('/books')
-def books():
-    results = sql_select('SELECT id, name, price, image_url FROM books')
-
-    product_items = []
-    for row in results:
-        id, name, price, image_url = row
-        price = f'${price/100:.2f}'
-        product_items.append([id, name, price, image_url])
-
-    return render_template('books.html', product_items=product_items)
-
-
 #LOGIN/LOGOUT
 @app.route('/login')
 def login():
