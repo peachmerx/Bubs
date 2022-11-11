@@ -29,6 +29,11 @@ def toys():
 
     return render_template('toys.html', product_items=product_items)
 
+@app.route('/learn')
+def learn():
+
+    return render_template('learn.html')
+
 #LOGIN/LOGOUT
 @app.route('/login')
 def login():

@@ -1,58 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
+* {
+    font-family: 'Poiret One', cursive;
+}
 body {
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #d16b9b;
-    background-color: #d16b9b;
+    color: rgb(62, 62, 62);
+    background-color: whitesmoke;
 }
 .first {
     padding: 20px 10px 10px 50px;
 }
 .homeimagefirst {
-    width: inherit;
-}
-nav {
+    height: 60%;
     width: 100%;
-  }  
-nav > ul > li {
-    display: inline-block;
-    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 150px;
+    left: 0;
+    z-index: -1;
+    margin-bottom: 6rem;
+} 
+.joinphoto {
+    height: 90%;
+    width: 100%;
+    opacity: 25%;
+    object-fit: cover;
+    position: absolute;
+    top: 150px;
+    left: 0;
+    z-index: -1;
+    margin-bottom: 6rem;
+}
+.loginphoto {
+    height: 90%;
+    width: 100%;
+    opacity: 40%;
+    object-fit: cover;
+    position: absolute;
+    top: 150px;
+    left: 0;
+    z-index: -1;
+    margin-bottom: 6rem;
+}
+.learnphoto {
+    height: 90%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 150px;
+    left: 0;
+    z-index: -1;
+    margin-bottom: 6rem;
 }
 a{
     text-decoration: none;
-    color: #f8e9c9;
+    color: rgb(62, 62, 62);
+}
+p {
+    color: rgb(62, 62, 62);
+    font-size: 18px;
+    font-weight: bold;
 }
 h1 {
     font-size: 50px;
-    background-color: #f8e9c9;
+    color: rgb(62, 62, 62);
 }
 h2 {
     font-size: 16px;
-    color: #f8e9c9;
 }
 h3 {
     font-size: 16px;
-    color: #f8e9c9;
+}
+h5 {
+    font-size: 18px;
 }
 label {
     font-size: 16px;
-    color: #f8e9c9;
-}
-li {
-    font-size: 15px;
-    list-style-type: none;
-    color: #f8e9c9;
 }
 .imageproduct {
     width: 250px;
-    align-content: center;
-    border-color: #915cab;
-    border-style: solid;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 6rem;
+    margin: 0 auto;
+    padding: 6rem;
+}
+.join-form {
+    height: 350px;
+    backgro;
+    justify-content: center;
+    font-weight: bold;
 }
 .dropbtn {
     background-color: #f8e9c9;
     padding: 15px;
-    color: #d16b9b;
+    color: rgb(62, 62, 62);
     font-size: 15px;
+    top: 100px;
+    left: 50px;
     border: none;
     cursor: pointer;
     font-weight: bolder;
@@ -72,7 +119,7 @@ li {
 }
   
 .dropdown-content a {
-    color: #d16b9b;
+    color: rgb(62, 62, 62);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -80,7 +127,7 @@ li {
 }
   
 .dropdown-content a:hover {
-    background-color: #915cab;
+    background-color: whitesmoke;
 }
   
 .dropdown:hover .dropdown-content {
@@ -88,10 +135,19 @@ li {
 }
   
 .dropdown:hover .dropbtn {
-    background-color: #915cab;
+    background-color: #f8e9c9;
 }
 footer {
-    font-size: 10px;
-    padding: 1px 10px 10px 50px;
-    color: #f8e9c9;
+    font-size: 15px;
+    color: rgb(62, 62, 62);
+    align-items: center;
+    height: 10vh;
+    font-weight: 500;
+    position: inherit;
+    border-top: .5px solid;
+    border-color: rgb(90, 90, 90);
+    margin-top: 400px;
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
 }

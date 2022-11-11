@@ -8,31 +8,46 @@
     <title>Bubs</title>
 </head>
 <body>
-    <div class="hero-container">
-        <h1 class="max-text-height">SIGN UP</h1>
-    </div>
+    <h1>BUBS for Babies</h1>
+    <div class="dropdown" style="float:left;">
+        <button class="dropbtn">Menu</button>
+        <div class="dropdown-content">
+            <a href="/">Home</a>
+
+            <a href="/toys">Toys</a>
+
+            <a href="/learn">Learn</a>
+                
+            <a href ="/login">Log In</a>
     
-    <div class="login-form">
-        <form class="login" method="POST" action="/sign_up_action">
-            <h1>Hello, <span class="bg-text-green"> Mummy</span>! Do you wanna join our community?</h1>
+        </div>
+    </div>
+    <div class="join">
+        <h5>Join Us</h5>
+    </div>
+    <div>
+        <img src="https://joy-pup.com/wp-content/uploads/2022/05/golovna-43.jpg" class="joinphoto">
+    </div>
+    <div class="join-form">
+        <form class="join" method="POST" action="/join_action">
             <br>
             <br>
             <p>What's your name?</p>
-            <br>
             <input type="text" name="name" placeholder="Name" required>
-            <br>
             <br>
             <p>Your Email</p>
             <br>
             <input type="text" name="email" placeholder="Email" required>
             <br>
-            <br>
             <p>Create Password</p>
             <br>
             <input type="text" name="password" placeholder="Password" required>
+            <br>
             <div class="submit">
+            <br>
                 <input id="submit-login" type="submit" value="SIGN UP">
             </div>
         </form>
     </div>
+    <footer>copyright 2022</footer>
 </body>
