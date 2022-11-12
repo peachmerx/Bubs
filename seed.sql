@@ -7,4 +7,4 @@ INSERT INTO toys (name, price, image_url) VALUES ('Wild Animals by Ingela P Arrh
 INSERT INTO toys (name, price, image_url) VALUES ('Love Makes A Family by Sophie Beer', 1700, 'https://cdn.shopify.com/s/files/1/0249/5715/7421/products/LoveMakesAFamily_Book_460x.jpg?v=1625640187');
 INSERT INTO toys (name, price, image_url) VALUES ('The Very Hungry Caterpillar by Eric Carle', 1800, 'https://cdn.shopify.com/s/files/1/0249/5715/7421/products/Theveryhungrycatipillar_play_460x.jpg?v=1625639609');
 
-INSERT INTO users (name, email, password_hash) VALUES ('James', 'james@example.com', '$2b$12$zPKRrhoIst0lWXzyMhAgFe.mXNCo7mRfGesg7EbDNpKAq7zsFmHY6');
+INSERT INTO users (name, email, password_hash) VALUES ('Peach', 'peach@example.com', '$2b$12$zPKRrhoIst0lWXzyMhAgFe.mXNCo7mRfGesg7EbDNpKAq7zsFmHY6');

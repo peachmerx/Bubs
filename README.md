@@ -31,6 +31,7 @@ Second Project for General Assembly
 
 ## Improvements needed for this project:
 Coding:
+- links on my database products
 - still need a better log in page that would stop user from just clicking back
 - still need to add other products pages
 - also have to organize the account page in terms of edit/delete/add products.
@@ -42,4 +43,5 @@ Coding:
 - https://cdn.shopify.com/s/files/1/0687/7613/t/59/assets/lookbook-modmedia-7916-feature.jpg?v=1666576772
 - https://cdn.shopify.com/s/files/1/0687/7613/collections/BABY_Clothing_f98ca567-9f2f-4853-ab3e-0931bdf09958_2000x.jpg?v=1666838308
 - https://joy-pup.com/wp-content/uploads/2022/05/golovna-43.jpg
+- https://thememo.com.au/collections/play
 

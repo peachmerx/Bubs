@@ -14,7 +14,15 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 @app.route('/')
 def index():
+    # # session = session
+    # # print(session)
+    # if  session['user_id']:
 
+    #     return render_template('home.html', session=session['user_id'])
+
+    # else:
+    #     return render_template('home.html')
+    # return render_template('home.html', session=session.get('user_id'))
     return render_template('home.html')
 
 @app.route('/toys')
@@ -65,8 +73,11 @@ def login_action():
 
 @app.route('/logout')
 def logout():
+    session.clear()
     response = redirect('/')
     return response
+
+
 
 #ACCOUNT PROFILE
 @app.route('/account')
