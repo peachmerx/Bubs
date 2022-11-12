@@ -26,25 +26,27 @@
     <br>
     <br>
     <br>
-    <ol>
-        {% for id, name, price, image in product_items %}
-        <li>
-            <br>
-            <br>
-            <img src = "{{image}}" class="imageproduct">
-            <br>
-            <br>
-            {{name}}
-            <br>
-            <br>
-            {{price}}
-            <br>
-            <br>
-            <!-- [ <a href="/edit/{{id}}">Edit Item</a> / <a href="{{url_for('delete', toys_id = id)}}">Delete Item</a> / <a href="/add">Add Item</a> ] -->
-            <br>
-        </li>
-        {% endfor %}
-    
-    <footer>copyright 2022</footer>
+    <div class="products_container">
+        <div class="products">
+            <div class="content">
+                {% for id, name, price, image in product_items %}
+                <br>
+                <br>
+                <img src = "{{image}}" class="imageproduct">
+                <br>
+                <br>
+                {{name}}
+                <br>
+                <br>
+                {{price}}
+                <br>
+                <br>
+                <!-- [ <a href="/edit/{{id}}">Edit Item</a> / <a href="{{url_for('delete', toys_id = id)}}">Delete Item</a> / <a href="/add">Add Item</a> ] -->
+                <br>
+                {% endfor %}
+            </div>               
+        </div>
+    </div>
+    <footer>Copyright 2022</footer>
 </body>
 </html>

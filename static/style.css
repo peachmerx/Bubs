@@ -53,6 +53,18 @@ body {
     z-index: -1;
     margin-bottom: 6rem;
 }
+.products {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: space-between;
+}
+/* .content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: space-between;
+} */
 a{
     text-decoration: none;
     color: rgb(62, 62, 62);
