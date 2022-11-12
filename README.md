@@ -10,7 +10,7 @@ Second Project for General Assembly
 
 ## Work Plan
 - started with a mind map (hand written)
-    Pages needed for my website:
+    - Pages needed for my website:
         - Home basic landing page
         - Toys (products section, just cerated one page for now)
         - Learn (should be where all the blogs/articles/stories shared by the members)
